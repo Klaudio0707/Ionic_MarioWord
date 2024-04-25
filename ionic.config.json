@@ -1,0 +1,7 @@
+{
+  "name": "MarioWord",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
