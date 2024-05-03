@@ -26,3 +26,163 @@ ion-menu-button {
 #container a {
   text-decoration: none;
 }
+/* ----------------------------------------------------------   */
+.game-board{
+  width: 100%;
+  height: 600px;
+  border: 15px solid rgb(35, 160, 35);
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(#87ceeb, #e0f6ff);
+  }
+  .pipe{
+  position: absolute;
+  bottom: 0;
+  width: 60px;
+  animation:  pipe-animation 1.5s infinite linear;
+  }
+  
+  .mario{
+  width: 100px;
+  position: absolute;
+  bottom: 0px;
+  
+  }
+  
+  .nuvens{
+  width: 450px;
+  margin-top: 10%;
+  position:relative;
+  animation: cloud-animation 16s infinite linear;
+  }
+  
+  .jump{
+  
+  animation: jump 500ms  ease-out;
+  }
+  
+  .bottom-reset{
+  position:flex;
+  align-items: center;
+  text-align: center;
+  height: 50px;
+  
+  color: blue;
+  font-weight: bold;
+  bottom: 15;
+  
+  }
+  .nome-mario{
+  width: 200px; /*  */
+   /* esquerta*/
+  margin-top: 2%;
+  position:absolute;
+  color: #a11a13;
+  border-color: black;
+  
+  }
+  
+  .moeda{
+  width: 30px;
+  left: 16%;
+  position: absolute;
+  margin-top: 2%;
+  bottom: 510px;
+  
+  
+  }
+  .moeda2{
+      width: 30px;
+      left: 15%;
+      position: absolute;
+      margin-top: 2%;    
+      overflow:hidden;
+      white-space:nowrap;
+      bottom: 510px;
+      }
+  
+  
+  .score-img{
+      width: 150px;
+      left: 80%;
+      position: absolute;
+      margin-top: -1%;
+  
+  }
+  .score-texto{
+      width: 150px;
+      left: 55%;
+      position: absolute;
+      margin-top: 1%;
+      color: #070707;
+      -webkit-text-stroke-color: #c20b02;
+      -webkit-text-stroke-width: 0.5px;
+      bottom: 520px;
+    
+  }
+  #score-{
+      width: 140px;
+      left: 50%;
+      margin-top: 2%;
+      position: absolute;
+      margin-top: 1%;
+      bottom: 510px;
+  
+  
+  }
+  
+  @keyframes pipe-animation{
+  
+      from{
+  right: -80px;
+  
+      }
+  
+  to {
+      right: 100%;
+  }
+  }
+  
+  @keyframes jump{
+  0% {
+      bottom: 0;
+  }
+  40%{
+  bottom: 200px;
+  
+  }
+  
+  
+  50%{
+      bottom: 180px;
+  }
+  
+  60%{
+      bottom: 100px;
+      
+  }
+  80%{
+      bottom: 60px;
+      
+  }
+     
+  100%{
+      bottom: 0;
+  }
+  
+  }
+  
+  @keyframes cloud-animation{
+  
+  from {
+  right: -650px;
+  
+  }
+  to{
+  
+  right: 100%; 
+  
+  }
+  
+  }

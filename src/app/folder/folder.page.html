@@ -15,7 +15,20 @@
   </ion-header>
 
   <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div class="game-board">
+      <h3 class="nome-mario">Mario</h3>
+      <img src="/assets/img/moeda gif.gif" class="moeda"> 
+      <img src="/assets/img/moeda gif.gif" class="moeda2"> 
+     <h3 id="score">Score:</h3> 
+     <p onkeydown= "down()" class="score-texto" ></p>
+     <img src="/assets/img/mario.gif" class="mario">
+     <img src="/assets/img/pipe.png" class="pipe">
+     <img src="/assets/img/clouds.png" class="nuvens">
+     </div>
+    
+
+    <!-- <strong class="capitalize">{{ folder }}</strong> -->
+    <button onclick="window.location.reload()" class="bottom-reset">Reset</button>
+    <!-- <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p> -->
   </div>
 </ion-content>
