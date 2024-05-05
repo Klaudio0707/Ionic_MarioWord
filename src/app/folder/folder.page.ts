@@ -8,33 +8,25 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class FolderPage implements OnInit {
   public folder!: string;
-  private count = 0;
-  private scoreElement!: HTMLElement;
+  public count = 0;
+  public scoreElement!: HTMLElement;
 
-  constructor(private activatedRoute: ActivatedRoute, private elementRef: ElementRef<HTMLElement>) {}
+  constructor(private activatedRoute: ActivatedRoute, public elementRef: ElementRef<HTMLElement>) {}
+
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id') as string;
     this.scoreElement = this.elementRef.nativeElement.querySelector('.score-texto') ?? this.elementRef.nativeElement;
 
     const mario = document.querySelector('.mario') as HTMLImageElement;
     const pipe = document.querySelector('.pipe') as HTMLElement;
-    
-    const jump = () => {
 
-    
-      mario.classList.add('jump');
-      setTimeout(() => {
-        mario.classList.remove('jump');
-      }, 500);
+    const pular = (event: KeyboardEvent) => {
+      if (event.key === 'ArrowUp') {
+        this.pular();
+      }
     };
-    // const jump = () => {
-    //   mario.classList.add('jump');
-    //   setTimeout(() => {
-    //     mario.classList.remove('jump');
-    //   }, 500);
-    // };
-    document.addEventListener('keydown', jump );
-    
+
+    document.addEventListener('keydown', pular);
     
     const checkCollision = () => {
       const pipePosition = pipe.offsetLeft;
@@ -50,11 +42,16 @@ export class FolderPage implements OnInit {
       }
     };
 
-    const loop = setInterval(checkCollision, 1);
+    const loop = setInterval(checkCollision, 10);
   }
 
-  down(): void {
+  pular(): void {
     this.count++;
     this.scoreElement.innerText = `${this.count}`;
+    const mario = document.querySelector('.mario') as HTMLImageElement;
+    mario.classList.add('jump');
+    setTimeout(() => {
+      mario.classList.remove('jump');
+    }, 500);
   }
 }
