@@ -8,9 +8,9 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header collapse="condense">a
     <ion-toolbar>
-      <ion-title size="large">{{ folder }}</ion-title>
+      <ion-title size="large"></ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -20,15 +20,18 @@
       <img src="/assets/img/moeda gif.gif" class="moeda"> 
       <img src="/assets/img/moeda gif.gif" class="moeda2"> 
      <h3 id="score">Score:</h3> 
-     <p onkeydown= "down()" class="score-texto" ></p>
+     <p onkeydown= "down()" class="score-texto" >{{count}}</p>
      <img src="/assets/img/mario.gif" class="mario">
      <img src="/assets/img/pipe.png" class="pipe">
      <img src="/assets/img/clouds.png" class="nuvens">
-     </div>
+    
     
 
-    <!-- <strong class="capitalize">{{ folder }}</strong> -->
+    </div>
+    
+    <ion-button (click)="pular()">Clique aqui</ion-button>
+
     <button onclick="window.location.reload()" class="bottom-reset">Reset</button>
-    <!-- <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p> -->
+   
   </div>
 </ion-content>
